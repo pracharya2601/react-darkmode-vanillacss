@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+import {langTypeSelection} from './util/content';
+import {useLanguage} from './hooks/useLanguage';
+import {useTheme} from './hooks/useTheme';
+
+
+
+//navbar
+import Navbar from './components/navbar/Navbar';
+
+const App = () => {
+  const {currentTheme} = useTheme();
+  const {language, content, changeLanguage} = useLanguage();
+  if(!content) {
+    return <h1>Loading...</h1>
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar navbar={content.navbar}/>
+      <h1>{currentTheme}</h1>
+      <h1>{content.langType}</h1>
+      <div>
+        <select id="language" value={language} onChange={(event) => changeLanguage(event.target.value)}>
+          {langTypeSelection.map((lg, index) => (
+            <option key={index} value={lg.name}>{lg.langType}</option>
+          ))}
+        </select>
+      </div>
+      <Button />
+    </>
   );
+};
+
+const Button = () => {
+  const {currentTheme, themeChange} = useTheme();
+  return (
+    <button onClick={themeChange}>
+      {currentTheme}
+    </button>
+  )
 }
 
 export default App;
+
