@@ -1,0 +1,10 @@
+{
+  "name": "english",
+"langType": "english",
+"navbar": {
+  "home": "Prakash Acharya",
+  "portfolio": "Portfolio",
+  "contact": "Contact",
+  "about": "About"
+}
+}

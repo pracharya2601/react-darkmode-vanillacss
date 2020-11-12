@@ -3,7 +3,9 @@ import './Navbar.css';
 import {useWindowDimension}  from '../../hooks/useWindowDimension';
 import {Icons} from './icons/icons';
 
-const Navbar = ({navbar}) => {
+import ThemeBtn from '../colotThemeBtn/ThemeBtn';
+
+const Navbar = ({navbar, currentTheme}) => {
   const {height, width} = useWindowDimension();
   if(!navbar) {
     return <h1>Loading...</h1>
@@ -22,6 +24,10 @@ const Navbar = ({navbar}) => {
         <li>
           <Icons title={navbar.contact} type="about"/>
         </li>
+        <li>
+        <ThemeBtn/>
+        </li>
+          
       </nav>
     </header>
   )

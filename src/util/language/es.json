@@ -1,0 +1,10 @@
+{
+  "name": "spanish",
+  "langType": "español",
+  "navbar": {
+    "home": "Prakash Acharya",
+    "portfolio": "Portafolio",
+    "contact": "Contacto",
+    "about": "Acerca de"
+  }
+}

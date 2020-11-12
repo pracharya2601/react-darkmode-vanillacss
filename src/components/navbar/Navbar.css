@@ -5,6 +5,7 @@
   left: 0; */
   display: flex;
   justify-content: space-between;
+  bottom: 0;
 }
 
 .navbar nav {
@@ -16,10 +17,20 @@
   padding: 0 10px;
   cursor: pointer;
 }
+.navbar nav li:last-child {
+  list-style: none;
+  padding: 5px 10px 0 5px;
+  cursor: pointer;
+}
 .navbar nav li:hover {
   color: var(--color-primary-beta);
   border-bottom: 1px solid var(--color-primary-beta);
 }
+.navbar nav li:last-child:hover {
+  color: var(--color-primary-beta);
+  border-bottom: none;
+}
+
 /* change svg opacaty inside li tag while hover li */
 .navbar nav li:hover svg {
   opacity: 1;
